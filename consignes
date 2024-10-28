@@ -1,0 +1,7 @@
+1-Creer une carte et l'afficher sous la forme 'deux de coeur'
+2-a-Créer un deck complet de 52 cartes et l'afficher en entier.
+  b-Melonger le deck puis le réafficher .
+3-Créer les deux joueurs et leur distribuer les cartes tour à tour.
+4-Faire jouer à chaque joueur la carte du dessus de son deck et l'afficher .
+5-Faire récupérer a un joueur ses cartes jouées + celles de l'adversaire .
+6-Faire le jeux .

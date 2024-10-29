@@ -1,6 +1,10 @@
 // Valeur.ts
 export class Valeur {
-    constructor(public valeur: number) {}
+    private valeur : number;
+
+    constructor(valeur: number) {
+        this.valeur = valeur;
+    }
 
     toString(): string {
         const valeursNoms: { [key: number]: string } = {
@@ -10,6 +14,10 @@ export class Valeur {
             14: 'As',
         };
         return valeursNoms[this.valeur] || this.valeur.toString();
+    }
+
+    public getNumber():number{
+        return this.valeur;
     }
 
     public static comparer(valeur1: Valeur, valeur2: Valeur): number {

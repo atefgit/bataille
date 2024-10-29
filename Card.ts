@@ -14,8 +14,7 @@ export class Card {
         return `${this.valeur.toString()} de ${this.couleur}`;
     }
 
-    // Méthode pour obtenir la valeur
-    public getValeur(): Valeur {
-        return this.valeur;
+    public getValeur(): number {
+        return this.valeur.getNumber();
     }
 }

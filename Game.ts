@@ -3,11 +3,11 @@ import { Card } from './Card';
 import { Valeur } from './Valeur';
 
 export class Game {
-    protected cartes: Card[] = []; // Attribut protected
+    protected cartes: Card[] = []; 
 
     constructor() {
         this.creerJeu();
-        this.melanger();
+        // this.melanger();
     }
 
     creerJeu(): void {

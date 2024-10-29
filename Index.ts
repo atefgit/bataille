@@ -3,18 +3,18 @@ import { Player } from './Player';
 import { Game } from './Game';
 import { Battle } from './Battle';
 
-// Création du jeu et des joueurs
+// Création du jeu
 const jeu = new Game();
-jeu.afficherDeck(); // Afficher le deck complet
-jeu.melanger();     // Mélanger le deck
-jeu.afficherDeck(); // Afficher le deck mélangé
+jeu.melanger(); // Mélanger le deck
 
-const joueur1 = new Player("Alice");
-const joueur2 = new Player("Bob");
+// Création des joueurs
+const joueur1 = new Player("Player1");
+const joueur2 = new Player("Player2");
 const [cartesJoueur1, cartesJoueur2] = jeu.distribuer(); // Distribution des cartes
-joueur1.setCartes(cartesJoueur1); // Définir les cartes du joueur 1
-joueur2.setCartes(cartesJoueur2); // Définir les cartes du joueur 2
+joueur1.ajouterCartes(cartesJoueur1); // Ajouter les cartes du joueur 1
+joueur2.ajouterCartes(cartesJoueur2); // Ajouter les cartes du joueur 2
 
+// Lancement de la bataille
 const bataille = new Battle(joueur1, joueur2);
 
 // Boucle de jeu

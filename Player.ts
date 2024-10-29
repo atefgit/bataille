@@ -2,7 +2,7 @@
 import { Card } from './Card';
 
 export class Player {
-    protected cartes: Card[] = []; // Attribut protected
+    protected cartes: Card[] = []; 
 
     constructor(public nom: string) {}
 
@@ -14,17 +14,6 @@ export class Player {
         this.cartes.push(...cartes);
     }
 
-    
-    public getCartes(): Card[] {
-        return this.cartes;
-    }
-
-    // Méthode pour définir les cartes
-    public setCartes(cartes: Card[]): void {
-        this.cartes = cartes;
-    }
-
-    // Méthode pour obtenir le nombre de cartes
     public getNombreDeCartes(): number {
         return this.cartes.length;
     }

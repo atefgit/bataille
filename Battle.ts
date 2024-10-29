@@ -3,9 +3,9 @@ import { Player } from './Player';
 import { Card } from './Card';
 
 export class Battle {
-    private joueur1: Player; 
+    private joueur1: Player; // Déclaration des joueurs comme attributs privés
     private joueur2: Player;
-    private manche: number = 0; 
+    private manche: number = 0; // Compteur de manches
 
     constructor(joueur1: Player, joueur2: Player) {
         this.joueur1 = joueur1;
@@ -26,12 +26,11 @@ export class Battle {
             console.log("Égalité! Les cartes sont mises de côté.");
         }
     }
-
     public tour(): void {
         const carteJoueur1 = this.joueur1.jouerCarte();
         const carteJoueur2 = this.joueur2.jouerCarte();
 
-        this.manche++; 
+        this.manche++; // Incrémenter le compteur de manches
         console.log(`-----Player1 : ${this.joueur1.getNombreDeCartes()}------- Manche ${this.manche} -----Player2 : ${this.joueur2.getNombreDeCartes()}-------`);
 
         if (carteJoueur1 && carteJoueur2) {

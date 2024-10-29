@@ -2,7 +2,7 @@
 import { Card } from './Card';
 
 export class Player {
-    protected cartes: Card[] = []; 
+    protected cartes: Card[] = []; // Attribut protected
 
     constructor(public nom: string) {}
 

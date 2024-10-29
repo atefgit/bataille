@@ -1,20 +1,24 @@
 // Game.ts
 import { Card } from './Card';
+import { Couleur } from './Couleur';
 import { Valeur } from './Valeur';
 
 export class Game {
-    protected cartes: Card[] = []; 
+    protected cartes: Card[] = []; // Attribut protected
 
     constructor() {
         this.creerJeu();
-        // this.melanger();
+        this.melanger();
     }
 
     creerJeu(): void {
-        const couleurs = ['Cœur', 'Carreau', 'Trèfle', 'Pique'];
-        for (let valeur = 2; valeur <= 14; valeur++) {
-            for (let couleur of couleurs) {
-                this.cartes.push(new Card(new Valeur(valeur), couleur));
+        for (let couleur in Couleur) {
+            if (isNaN(Number(couleur))) { // Vérifie que ce n'est pas un index numérique
+                for (let valeur in Valeur) {
+                    if (!isNaN(Number(valeur))) { // Vérifier si la valeur est un nombre
+                        this.cartes.push(new Card(Valeur[valeur as keyof typeof Valeur], Couleur[couleur as keyof typeof Couleur]));
+                    }
+                }
             }
         }
     }
@@ -27,8 +31,10 @@ export class Game {
     }
 
     distribuer(): [Card[], Card[]] {
-        const milieu = Math.ceil(this.cartes.length / 2);
-        return [this.cartes.slice(0, milieu), this.cartes.slice(milieu)];
+        // Distribution de 26 cartes à chaque joueur
+        const joueur1Cartes = this.cartes.slice(0, 26);
+        const joueur2Cartes = this.cartes.slice(26, 52);
+        return [joueur1Cartes, joueur2Cartes];
     }
 
     afficherDeck(): void {

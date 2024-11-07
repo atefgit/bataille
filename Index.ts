@@ -5,10 +5,10 @@ import { Battle } from './Battle';
 
 // Création du jeu
 const jeu = new Game();
-jeu.afficherDeck(); // Afficher le deck complet avant de le mélanger
+// jeu.afficherDeck(); // Afficher le deck complet avant de le mélanger
 jeu.melanger();     // Mélanger le deck
 console.log("Deck mélangé :");
-jeu.afficherDeck(); // Afficher le deck mélangé
+// jeu.afficherDeck(); // Afficher le deck mélangé
 
 // Création des joueurs
 const joueur1 = new Player("Player1");
